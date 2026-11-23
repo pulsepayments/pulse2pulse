@@ -1,0 +1,25 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# deps / builds
+node_modules/
+.pnpm-store/
+dist/
+build/
+.next/
+.turbo/
+coverage/
+__pycache__/
+.venv/
+
+# tooling
+.DS_Store
+*.log
+.claude/settings.local.json
+playwright-report/
+test-results/
+screenshots/
