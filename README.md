@@ -10,7 +10,9 @@ Senders fund in GBP or USD. Licensed partners convert to a stablecoin, move it o
 - `CLAUDE.md` holds the rules every session follows. Read it first.
 - `/plan-council <brief>` produces a plan reviewed by a council of reviewers and fact-checked, written to `docs/plans/`.
 - Skills in `.claude/skills/` load on demand (domain, compliance, adapters, product modules, design system).
-- Agents in `.claude/agents/`: `researcher`, `fintech-reviewer`, `ui-reviewer`.
+- Agents in `.claude/agents/`: `researcher`, `fintech-reviewer`, `ui-reviewer` (+ impeccable helpers).
+- Third-party skills (Emil Kowalski, Impeccable, Trail of Bits security, Anthropic) are listed in `.claude/skills/VENDORED.md`.
+- `docs/BUILD-REQUIREMENTS.md` lists everything needed to build Pulse and who provides it.
 
 ## Layout
 ```

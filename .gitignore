@@ -23,3 +23,6 @@ __pycache__/
 playwright-report/
 test-results/
 screenshots/
+
+# impeccable engine binary (downloaded on first run, checksum-verified)
+.claude/skills/impeccable/scripts/bin/
