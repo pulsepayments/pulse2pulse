@@ -376,3 +376,58 @@ h1, h2, h3 { text-wrap: balance; }
 .fn { text-decoration: none; color: var(--copper-ink); font-weight: 600; padding-inline: 2px; }
 .summary__sub { display: block; font-size: var(--step--1); font-weight: 400; color: var(--ink-2); }
 .watermark { justify-self: start; border: 1.5px solid var(--copper-ink); color: var(--copper-ink); padding: 4px 10px; font-size: var(--step--1); font-weight: 640; letter-spacing: 0.06em; text-transform: uppercase; font-stretch: 85%; }
+
+/* ---------- Finish-review batch ---------- */
+/* Rows settle one by one */
+.roll[data-tick="1"] { animation-duration: 180ms; animation-delay: calc(var(--i, 0) * 70ms); }
+/* Arrival is the promise: its time is the largest numeral on the board */
+.tt--lands .tt__time { font-size: 2.4rem; }
+@media (max-width: 719px) { .tt--lands .tt__time { font-size: 1.7rem; } }
+.tt__status { width: 1%; white-space: nowrap; }
+.tt__badge { font-size: 0.6875rem; font-weight: 640; font-stretch: 85%; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid var(--on-copper); padding: 3px 6px; }
+.tt--lands .tt__badge { background: var(--on-copper); color: var(--copper); }
+@media (max-width: 559px) { .tt__status { display: none; } }
+.tt__amount .roll { white-space: nowrap; }
+.tt__place, .tt__flag { font-weight: 400; }
+
+
+/* Themed checkbox */
+.check input {
+  appearance: none; -webkit-appearance: none; width: 20px; height: 20px; margin: 1px 0 0;
+  border: 1.5px solid var(--on-copper); background: transparent; display: grid; place-items: center; cursor: pointer; flex: none;
+}
+.check input::after { content: ""; width: 11px; height: 6px; border-left: 2px solid var(--on-copper); border-bottom: 2px solid var(--on-copper); transform: rotate(-45deg) translate(1px, -1px); opacity: 0; transition: opacity 120ms var(--ease); }
+.check input:checked::after { opacity: 1; }
+.check input:focus-visible { outline: 2px solid var(--on-copper); outline-offset: 2px; }
+
+/* Ruled note row (not a box) */
+.ruled-note { border-top: 1px solid var(--rule); padding-top: 12px; color: var(--ink-2); font-size: var(--step--1); line-height: 1.5; max-width: 70ch; }
+.ruled-note b { color: var(--ink); }
+
+/* Mobile preview strip */
+.strip__short { display: none; }
+@media (max-width: 559px) { .strip__long { display: none; } .strip__short { display: inline; } }
+
+/* Route line: the services as stations on one line */
+.route { list-style: none; margin: 0; padding: 0; position: relative; border-top: 2px solid var(--ink); }
+.route__stop { position: relative; display: grid; grid-template-columns: 28px 1fr auto; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--rule-soft); align-items: baseline; }
+.route__stop::before { content: ""; position: absolute; left: 6px; top: 0; bottom: 0; width: 3px; background: var(--rule-soft); }
+.route__stop:first-child::before { top: 50%; }
+.route__stop:last-child::before { bottom: 50%; }
+.route__dot { position: relative; z-index: 1; width: 15px; height: 15px; border-radius: 50%; border: 3px solid var(--ink-2); background: var(--paper); align-self: center; }
+.route__stop--first .route__dot { border-color: var(--copper); background: var(--copper); }
+.route__stop--first::before { background: var(--copper); }
+.route__stop--first .line__name { font-weight: 700; }
+.status--first { color: var(--copper-ink); }
+
+/* Graphite field: the footer */
+.footer { background: #131517; color: #ecedea; border-top: 0; --ink-2: #a8adb2; }
+.footer .note { color: #a8adb2; }
+.footer a { color: #ecedea; }
+.footer ::selection { background: var(--copper); color: #131517; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .footer { background: #181b1d; border-top: 1px solid #33383c; } }
+@media (max-width: 719px) {
+  .tt__flag--minor { display: none; }
+  .tt td { padding-block: 8px; }
+  .hero__copy { gap: 10px; }
+}

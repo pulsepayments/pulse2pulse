@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { DEFAULT_QUOTE, QuoteBoard, type QuoteState } from "./QuoteBoard";
 import { ArrowRight, Check } from "./Icons";
 import { formatMoney, parseAmountInput } from "@/lib/money";
-import { clock, illustrativeQuote, ORIGIN_CITY } from "@/lib/quote";
+import { clock, illustrativeQuote, ORIGIN_CITY, TARGET_MINUTES } from "@/lib/quote";
 
 type Step = 0 | 1 | 2 | 3;
 const STEPS = ["Amount", "To", "Review", "Track"] as const;
@@ -16,12 +16,16 @@ const ACCOUNTS = [
   { id: "co", name: "Example Holdings Ltd · operating account", meta: "Your company · Lusaka · ending 7740", currency: "ZMW" },
 ] as const;
 
-const TRACK = [
-  { what: "Funds received", where: "From your account", at: 0 },
-  { what: "Converted", where: "By our licensed partner, at the rate shown", at: 4 },
-  { what: "Sent to Zambia", where: "On its way to your bank", at: 6 },
-  { what: "Landed", where: "Credited to your account", at: 22 },
-] as const;
+function trackFor(checks: boolean) {
+  const off = checks ? TARGET_MINUTES.checks : 0;
+  return [
+    { what: "Funds received", where: "From your account", at: 0 },
+    ...(checks ? [{ what: "Checks complete", where: "Source of funds confirmed by our licensed partner", at: off }] : []),
+    { what: "Converted", where: "By our licensed partner, at the rate shown", at: off + TARGET_MINUTES.converts },
+    { what: "Sent to Zambia", where: "On its way to your bank", at: off + 6 },
+    { what: "Landed", where: "Credited to your account", at: off + TARGET_MINUTES.lands },
+  ];
+}
 
 export function SendPreview() {
   const [step, setStep] = useState<Step>(0);
@@ -41,6 +45,9 @@ export function SendPreview() {
     [send?.minor, send?.currency, account.currency, startedAt],
   );
 
+  const TRACK = useMemo(() => trackFor((quote?.stops.length ?? 3) > 3), [quote]);
+  const arrival = quote ? quote.stops[quote.stops.length - 1] : null;
+
   useEffect(() => heading.current?.focus(), [step]);
 
   // Rate lock countdown on review.
@@ -57,7 +64,7 @@ export function SendPreview() {
     setProgress(1);
     const t = setInterval(() => setProgress((p) => (p < TRACK.length ? p + 1 : p)), 2500);
     return () => clearInterval(t);
-  }, [step]);
+  }, [step, TRACK.length]);
 
   const tooSmall = !!send && send.minor < 1_000_000n;
   const canContinue = !!send && send.minor > 0n;
@@ -144,10 +151,10 @@ export function SendPreview() {
                 <dd>{account.currency === q.origin ? "No conversion" : `1 ${q.origin} = ${quote.rate} ${account.currency}`}</dd>
               </div>
               <div className="summary__row"><dt>Pulse fee</dt><dd>Set at launch · shown here</dd></div>
-              <div className="summary__row"><dt>Target arrival</dt><dd>{clock(quote.stops[2].at, quote.stops[2].tz)} Lusaka time*<span className="summary__sub">Banking hours and checks permitting</span></dd></div>
+              <div className="summary__row"><dt>Target arrival</dt><dd>{arrival ? clock(arrival.at, arrival.tz) : "––:––"} Lusaka time*<span className="summary__sub">Banking hours and checks permitting</span></dd></div>
               <div className="summary__row summary__row--total"><dt>Lands<span className="summary__sub">Illustrative, before fees and the partner’s FX margin</span></dt><dd>{formatMoney(quote.receive)}</dd></div>
             </dl>
-            <p className="callout">
+            <p className="ruled-note">
               For transfers of this size, the licensed partner may ask where the money came from before it moves. You’ll only be
               asked once for each source. Quote held for <b>{Math.floor(lockLeft / 60)}:{String(lockLeft % 60).padStart(2, "0")}</b>
               {lockLeft === 0 ? " — Pulse will refresh it automatically." : "."}

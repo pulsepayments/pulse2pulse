@@ -14,7 +14,7 @@ export default function PreviewPage() {
       <Masthead showClocks={false} />
       <div className="strip" role="note">
         <div className="wrap strip__row">
-          <span>Preview · illustrative rates and example accounts · no money moves</span>
+          <span><span className="strip__long">Preview · illustrative rates and example accounts · no money moves</span><span className="strip__short">Preview · example data · no money moves</span></span>
         </div>
       </div>
       <main id="main" className="app">

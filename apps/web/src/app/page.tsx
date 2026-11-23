@@ -27,11 +27,12 @@ const NOTES = [
 ] as const;
 
 const LATER = [
-  ["Account details in Zambia, the UK and the US", "Receive in GBP, USD and ZMW to accounts in your name"],
-  ["Cards", "Spend dollars online from Zambia"],
-  ["Payroll", "Pay staff in Zambia in one approved batch"],
-  ["Invoices that chase themselves", "Drafted, sent, followed up and matched to payments"],
-  ["Bills", "ZESCO, water, school fees and more, paid from anywhere"],
+  ["Sending", "UK and US to Zambia, between your own accounts", "First departure"],
+  ["Account details in Zambia, the UK and the US", "Receive in GBP, USD and ZMW to accounts in your name", "Planned"],
+  ["Cards", "Spend dollars online from Zambia", "Planned"],
+  ["Payroll", "Pay staff in Zambia in one approved batch", "Planned"],
+  ["Invoices that chase themselves", "Drafted, sent, followed up and matched to payments", "Planned"],
+  ["Bills", "ZESCO, water, school fees and more, paid from anywhere", "Planned"],
 ] as const;
 
 export default function Home() {
@@ -64,8 +65,8 @@ export default function Home() {
             <div className="section__head">
               <h2 className="h2" id="route-h">Same money. A different route.</h2>
               <p>
-                A wire to Zambia can pass through banks you never chose, each adding time and sometimes a fee. Pulse runs the transfer as one
-                scheduled journey with licensed partners and modern settlement underneath.
+                A wire to Zambia can pass through banks you never chose, each adding time and sometimes a fee. Pulse will run each transfer as one
+                scheduled journey, with licensed partners and modern settlement underneath.
               </p>
             </div>
             <div className="section__body compare">
@@ -130,19 +131,20 @@ export default function Home() {
           <div className="wrap section__grid">
             <div className="section__head">
               <h2 className="h2" id="later-h">Later on this line</h2>
-              <p>Sending comes first. These are planned next, in the same app.</p>
+              <p>Sending is the first departure. These are planned next, in the same app.</p>
             </div>
-            <ul className="section__body line" role="list" style={{ listStyle: "none", margin: 0, padding: 0 }}>
-              {LATER.map(([n, d]) => (
-                <li className="line__row" key={n}>
+            <ol className="section__body route" aria-label="Pulse services in order">
+              {LATER.map(([n, d, st], i) => (
+                <li className={`route__stop ${i === 0 ? "route__stop--first" : ""}`} key={n}>
+                  <span className="route__dot" aria-hidden="true" />
                   <span>
                     <span className="line__name">{n}</span>
                     <span className="line__desc">{d}</span>
                   </span>
-                  <span className="status status--muted">Planned</span>
+                  <span className={`status ${i === 0 ? "status--first" : "status--muted"}`}>{st}</span>
                 </li>
               ))}
-            </ul>
+            </ol>
           </div>
         </section>
 

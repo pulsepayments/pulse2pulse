@@ -21,10 +21,13 @@ export const ORIGIN_CITY: Record<Origin, { city: string; tz: string }> = {
 export const DEST_CITY = { city: "Lusaka", tz: "Africa/Lusaka" };
 
 /** Target timetable, in minutes after funds are received. A design target, not a promise. */
-export const TARGET_MINUTES = { converts: 4, lands: 22 } as const;
+export const TARGET_MINUTES = { checks: 12, converts: 4, lands: 22 } as const;
+
+/** Above this (in major units of the send currency) the partner may run source-of-funds checks first. */
+export const CHECKS_THRESHOLD_MAJOR = 100_000n;
 
 export interface Stop {
-  key: "departs" | "converts" | "lands";
+  key: "departs" | "checks" | "converts" | "lands";
   label: string;
   place: string;
   at: Date;
@@ -47,17 +50,15 @@ export function illustrativeQuote(send: Money, dest: Destination, now: Date): Qu
   const receive = convert(send, dest as Currency, rate, "floor");
   const o = ORIGIN_CITY[origin];
   const plus = (min: number) => new Date(now.getTime() + min * 60_000);
-  return {
-    send,
-    receive,
-    rate,
-    pair,
-    stops: [
-      { key: "departs", label: "Departs", place: o.city, at: now, tz: o.tz },
-      { key: "converts", label: "Converted", place: "Licensed partner", at: plus(TARGET_MINUTES.converts), tz: o.tz },
-      { key: "lands", label: "Lands", place: DEST_CITY.city, at: plus(TARGET_MINUTES.lands), tz: DEST_CITY.tz },
-    ],
-  };
+  const checks = send.minor >= CHECKS_THRESHOLD_MAJOR * 100n;
+  const offset = checks ? TARGET_MINUTES.checks : 0;
+  const stops: Stop[] = [{ key: "departs", label: "Departs", place: o.city, at: now, tz: o.tz }];
+  if (checks) stops.push({ key: "checks", label: "Checks", place: "Licensed partner", at: plus(TARGET_MINUTES.checks), tz: o.tz });
+  stops.push(
+    { key: "converts", label: "Converted", place: "Licensed partner", at: plus(offset + TARGET_MINUTES.converts), tz: o.tz },
+    { key: "lands", label: "Lands", place: DEST_CITY.city, at: plus(offset + TARGET_MINUTES.lands), tz: DEST_CITY.tz },
+  );
+  return { send, receive, rate, pair, stops };
 }
 
 export function clock(at: Date, tz: string): string {

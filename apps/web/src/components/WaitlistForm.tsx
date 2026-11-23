@@ -53,12 +53,12 @@ export function WaitlistForm() {
         <label>Leave this empty <input name="bot-field" tabIndex={-1} autoComplete="off" /></label>
       </p>
       <div>
-        <label className="field-label" htmlFor="wl-name">First name</label>
-        <input className="input" id="wl-name" name="name" autoComplete="given-name" placeholder="Optional" />
+        <label className="field-label" htmlFor="wl-name">First name <span style={{ textTransform: "none", fontWeight: 400 }}>(optional)</span></label>
+        <input className="input" id="wl-name" name="name" autoComplete="given-name" />
       </div>
       <div>
         <label className="field-label" htmlFor="wl-email">Email</label>
-        <input className="input" id="wl-email" name="email" type="email" autoComplete="email" required placeholder="you@company.com" />
+        <input className="input" id="wl-email" name="email" type="email" autoComplete="email" required />
       </div>
       <div className="span-2">
         <label className="field-label" htmlFor="wl-role">You are</label>
