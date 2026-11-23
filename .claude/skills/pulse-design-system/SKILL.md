@@ -3,7 +3,9 @@ name: pulse-design-system
 description: Pulse's UI/UX design system - brand tokens, layout, components, money-display rules, trust cues, mobile-first and low-bandwidth rules for African markets, accessibility, and the screenshot review loop. Load BEFORE writing or changing any UI (web app, mobile, emails, receipts, prototypes, marketing pages) and when reviewing UI.
 ---
 
-# Pulse design system (v0, provisional until brand assets exist)
+# Pulse design system
+
+> **The shipped visual system lives in `/DESIGN.md` (direction: "The Timetable") with tokens in `.impeccable/design.json`. Where this file's provisional v0 tokens (emerald, Inter, rounded radii, cards) differ, DESIGN.md wins.** The principles, money-display rules, Africa-specific rules and review loop below still apply.
 
 UI quality is a core differentiator. The bar: it should feel as calm, fast and trustworthy as the best neobanks, and work on a mid-range Android on 3G in Lusaka.
 
@@ -39,4 +41,4 @@ AmountInput (with currency switch), QuoteCard, RecipientPicker (bank and mobile-
 Regulated-partner disclosure in the footer of money screens, security messaging at KYC, a clear support entry point on every transfer, and real (not stock) photography.
 
 ## Review loop (required)
-1. Build the screen. 2. Screenshot it with Playwright at 360×780 and 1440×900, in light and dark. 3. Run the `ui-reviewer` agent on the screenshots. 4. Fix the findings. 5. Attach the final screenshots to the PR.
+1. Build the screen. 2. Screenshot it with Playwright at 360×780 and 1440×900, in light and dark. 3. Run the `ui-reviewer` agent (or the `impeccable` finish review) on the screenshots. 4. Fix the findings. 5. Attach the final screenshots to the PR.

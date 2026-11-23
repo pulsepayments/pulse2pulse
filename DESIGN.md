@@ -123,10 +123,10 @@ components:
     backgroundColor: "transparent"
     textColor: "{colors.graphite}"
     rounded: "{rounded.none}"
-    padding: "3px 6px"
+    padding: "0"
   status-badge-arrival:
-    backgroundColor: "{colors.graphite}"
-    textColor: "{colors.copper}"
+    backgroundColor: "transparent"
+    textColor: "{colors.graphite}"
   departure-board:
     backgroundColor: "{colors.copper}"
     textColor: "{colors.graphite}"
@@ -167,7 +167,7 @@ A two-ground system (paper and graphite) carrying one metal field colour, with a
 ### Neutral
 - **Signal Graphite** (graphite): primary ink on paper, primary button fill, every 1px and 2px rule, text and selected states on copper. Also the fixed ground of the footer in both themes (night-paper-2 in dark).
 - **Kiln Brown** (graphite-warm): secondary text on copper (place names, flags, footnotes on the board, placeholders). Keeps secondary copy inside the copper field rather than greying it out.
-- **Copper Ink** (copper-ink; night-copper-ink in dark): copper as text on paper. Late or varying statuses, the "Pulse" ledger title, footnote markers, the preview watermark (6.4:1 on paper).
+- **Copper Ink** (copper-ink; night-copper-ink in dark): copper as text on paper. Late or varying statuses, the "Pulse" ledger title, footnote markers, the preview status line "Preview — no money moves" (plain text, 6.4:1 on paper).
 - **Timetable Paper** (paper) and **Paper Shade** (paper-2): page ground and the one tonal step (row hover, account hover). Dark equivalents: night-paper and night-paper-2.
 - **Slate Text** (ink-2; night-ink-2 in dark): secondary copy, ledes, column descriptors, pending tracker rows.
 - **Hairline** (rule-soft; night-rule-soft in dark): row dividers inside tables and lists.
@@ -225,7 +225,7 @@ Flat. There are no drop shadows anywhere. Depth and grouping come from rule weig
 
 ## Shapes
 
-Square. Buttons, boards, inputs, segmented controls, badges and bands all have 0 radius. Circles appear only where a timetable uses them: radio marks, the tracker status dots and the route-line stops. Inputs are a single bottom rule, not a box. The route line on "Later on this line" is a 3px vertical line threading 15px ringed stops; the first stop and its segment are copper.
+Square. Buttons, boards, inputs, segmented controls and bands all have 0 radius. Circles appear only where a timetable uses them: radio marks, the tracker status dots and the route-line stops. Inputs are a single bottom rule, not a box. The route line on "Later on this line" is a 3px vertical line threading 15px ringed stops; the first stop and its segment are copper.
 
 ## Components
 
@@ -247,7 +247,7 @@ Currency switches on the board: a 1px graphite frame of 44px buttons divided by 
 - **Error:** a bold graphite message beside the action, announced as an alert.
 
 ### Departure board (signature)
-The working quote. A copper field with three bands: the inputs (amount and currency switches) closed by a 2px graphite rule; a timetable with Time, Stop, Status and Amount columns; a foot (note plus primary action) opened by another 2px rule. Rows are ruled at 35% graphite. Times sit in condensed numerals with a small uppercase timezone tag below. The arrival row ("Lands") is shaded 5% graphite, carries the largest time and amount, and its status badge is inverted (graphite fill, copper label). Status badges are 1px-framed uppercase labels.
+The working quote. A copper field with three bands: the inputs (amount and currency switches) closed by a 2px graphite rule; a timetable with Time, Stop, Status and Amount columns; a foot (note plus primary action) opened by another 2px rule. Rows are ruled at 35% graphite. Times sit in condensed numerals with a small uppercase timezone tag below. The arrival row ("Lands") is shaded 5% graphite, carries the largest time and amount, and its status ("Target*") is set apart by weight 800 alone. Statuses are plain uppercase text in the status column, never framed or filled.
 
 When the amount or currency changes, times and amounts roll in like a split flap: 180ms, ease-out-expo, staggered 70ms per row, removed under `prefers-reduced-motion`. It runs only after the visitor interacts, never on first paint.
 

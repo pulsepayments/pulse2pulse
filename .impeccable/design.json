@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T18:43:51+00:00",
+  "title": "Design System: Pulse",
+  "extensions": {
+    "colorMeta": {
+      "copper": {
+        "role": "primary",
+        "displayName": "Zambian Copper",
+        "canonical": "#c8703a",
+        "oklch": "oklch(63.4% 0.130 50.0)",
+        "tonalRamp": [
+          "#180600",
+          "#401a01",
+          "#6e3102",
+          "#9f4b0a",
+          "#c76f39",
+          "#e99768",
+          "#ffc19d",
+          "#ffe3c8"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Signal Graphite",
+        "canonical": "#131517",
+        "oklch": "oklch(19.4% 0.005 248.1)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#252728",
+          "#434547",
+          "#646669",
+          "#87898c",
+          "#acaeb1",
+          "#cfd1d3",
+          "#edeff0"
+        ]
+      },
+      "graphite-warm": {
+        "role": "neutral",
+        "displayName": "Kiln Brown",
+        "canonical": "#1f0f07",
+        "oklch": "oklch(18.9% 0.031 47.6)",
+        "tonalRamp": [
+          "#0f0a08",
+          "#2e241f",
+          "#50413a",
+          "#766157",
+          "#9a8479",
+          "#bea99f",
+          "#decdc5",
+          "#f8ece6"
+        ]
+      },
+      "copper-ink": {
+        "role": "neutral",
+        "displayName": "Copper Ink",
+        "canonical": "#8e4318",
+        "oklch": "oklch(47.2% 0.115 46.8)",
+        "tonalRamp": [
+          "#170601",
+          "#3e1b08",
+          "#6b3315",
+          "#9a4e25",
+          "#c17149",
+          "#e49974",
+          "#fdc2a6",
+          "#ffe4ce"
+        ]
+      },
+      "verdigris": {
+        "role": "secondary",
+        "displayName": "Verdigris",
+        "canonical": "#1f6b5c",
+        "oklch": "oklch(47.8% 0.077 176.9)",
+        "tonalRamp": [
+          "#020e0b",
+          "#0b2d26",
+          "#194f44",
+          "#2b7465",
+          "#519988",
+          "#7dbdad",
+          "#adddd0",
+          "#d5f8ee"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Timetable Paper",
+        "canonical": "#f3f4f2",
+        "oklch": "oklch(96.6% 0.003 128.5)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262726",
+          "#454544",
+          "#656665",
+          "#888988",
+          "#adaeac",
+          "#d0d1d0",
+          "#eeefee"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Paper Shade",
+        "canonical": "#e8e9e6",
+        "oklch": "oklch(93.2% 0.004 121.6)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262725",
+          "#454543",
+          "#666664",
+          "#898987",
+          "#adaeac",
+          "#d0d1cf",
+          "#eeefed"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Slate Text",
+        "canonical": "#4a4f55",
+        "oklch": "oklch(42.5% 0.012 252.9)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#24272a",
+          "#42454a",
+          "#61676d",
+          "#848a90",
+          "#a9aeb5",
+          "#cdd1d6",
+          "#eceff2"
+        ]
+      },
+      "rule-soft": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#c9cbc8",
+        "oklch": "oklch(84.0% 0.005 134.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262725",
+          "#444543",
+          "#656764",
+          "#888a87",
+          "#adaeac",
+          "#d0d1cf",
+          "#eeefed"
+        ]
+      },
+      "night-paper": {
+        "role": "neutral",
+        "displayName": "Night Paper",
+        "canonical": "#0f1112",
+        "oklch": "oklch(17.6% 0.004 229.0)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252727",
+          "#434546",
+          "#646668",
+          "#878a8b",
+          "#acaeb0",
+          "#cfd1d2",
+          "#edefef"
+        ]
+      },
+      "night-paper-2": {
+        "role": "neutral",
+        "displayName": "Night Paper Shade",
+        "canonical": "#181b1d",
+        "oklch": "oklch(22.0% 0.006 236.8)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#252728",
+          "#434547",
+          "#636769",
+          "#868a8c",
+          "#abaeb1",
+          "#ced1d3",
+          "#edeff0"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#ecedea",
+        "oklch": "oklch(94.4% 0.004 121.6)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262725",
+          "#454543",
+          "#666664",
+          "#898987",
+          "#adaeac",
+          "#d0d1cf",
+          "#eeefed"
+        ]
+      },
+      "night-ink-2": {
+        "role": "neutral",
+        "displayName": "Night Slate Text",
+        "canonical": "#9ca1a6",
+        "oklch": "oklch(70.6% 0.009 248.0)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#252729",
+          "#424549",
+          "#62676b",
+          "#858a8f",
+          "#aaaeb3",
+          "#ced1d5",
+          "#eceff1"
+        ]
+      },
+      "night-rule-soft": {
+        "role": "neutral",
+        "displayName": "Night Hairline",
+        "canonical": "#33383c",
+        "oklch": "oklch(33.7% 0.010 242.0)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#242729",
+          "#424649",
+          "#61676b",
+          "#848a8f",
+          "#a9afb3",
+          "#cdd2d5",
+          "#eceff1"
+        ]
+      },
+      "night-copper-ink": {
+        "role": "neutral",
+        "displayName": "Copper Ink (night)",
+        "canonical": "#e08a52",
+        "oklch": "oklch(71.3% 0.127 52.4)",
+        "tonalRamp": [
+          "#170600",
+          "#3f1b00",
+          "#6d3201",
+          "#9d4d07",
+          "#c47138",
+          "#e79967",
+          "#ffc29c",
+          "#ffe4c8"
+        ]
+      },
+      "night-verdigris": {
+        "role": "secondary",
+        "displayName": "Verdigris (night)",
+        "canonical": "#5cbfa8",
+        "oklch": "oklch(73.8% 0.100 176.1)",
+        "tonalRamp": [
+          "#000f0b",
+          "#002f25",
+          "#005243",
+          "#007864",
+          "#369d87",
+          "#6bc1ac",
+          "#a1e0cf",
+          "#ccfaed"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "One hero headline per page; 2.45rem fixed under 720px."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section heads, preview panel and privacy titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Ledger titles, confirmation line, summary total."
+      },
+      "timetable-time": {
+        "displayName": "Timetable Time",
+        "purpose": "Clock times in boards and trackers; arrival row steps up to 2.4rem."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Single paragraph under the display headline, max 34ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Notes, descriptions and prose, 60 to 68ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase column headers, status cells, field labels and timezone tags."
+      }
+    },
+    "shadows": [
+      {
+        "name": "focus-underline",
+        "value": "0 2px 0 0 currentColor",
+        "purpose": "Focused ruled input or amount field; a thicker rule, not a glow."
+      },
+      {
+        "name": "current-station",
+        "value": "inset 0 -3px 0 #c8703a",
+        "purpose": "Current step in the preview station list."
+      },
+      {
+        "name": "live-ring",
+        "value": "0 0 0 0 rgba(200,112,58,0.55) to 0 0 0 10px rgba(200,112,58,0)",
+        "purpose": "Expanding ring on the live tracker dot, 1.4s loop, off under reduced motion."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The single easing curve for every transition."
+      },
+      {
+        "name": "hover",
+        "value": "160ms",
+        "purpose": "Button inversion; segmented control 140ms."
+      },
+      {
+        "name": "roll",
+        "value": "180ms, stagger 70ms per row",
+        "purpose": "Split-flap roll of changed times and amounts after interaction only; disabled under prefers-reduced-motion."
+      },
+      {
+        "name": "track-row",
+        "value": "240ms color",
+        "purpose": "Tracker row moving from pending to done."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "board-split",
+        "value": "560px"
+      },
+      {
+        "name": "compare-split",
+        "value": "760px"
+      },
+      {
+        "name": "side-and-clocks",
+        "value": "720px"
+      },
+      {
+        "name": "preview-app",
+        "value": "960px"
+      },
+      {
+        "name": "grid-12",
+        "value": "1000px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Square graphite button; hover inverts to outline.",
+      "html": "<button class=\"ds-btn\">Join the waitlist <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2 8h11M9 3.5 13.5 8 9 12.5\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></button>",
+      "css": ".ds-btn{font-family:'Archivo Variable',Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums;display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px;border:1px solid #131517;background:#131517;color:#f3f4f2;font-weight:600;font-size:1rem;border-radius:0;cursor:pointer;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1),color 160ms cubic-bezier(0.16,1,0.3,1)}.ds-btn:hover{background:transparent;color:#131517}.ds-btn:focus-visible{outline:2px solid #131517;outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Outline button for secondary actions (Back, Try the preview).",
+      "html": "<button class=\"ds-btn-ghost\">Try the preview <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2 8h11M9 3.5 13.5 8 9 12.5\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></button>",
+      "css": ".ds-btn-ghost{font-family:'Archivo Variable',Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums;display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px;border:1px solid #131517;background:transparent;color:#131517;font-weight:600;font-size:1rem;border-radius:0;cursor:pointer;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1),color 160ms cubic-bezier(0.16,1,0.3,1)}.ds-btn-ghost:hover{background:#131517;color:#f3f4f2}.ds-btn-ghost:focus-visible{outline:2px solid #131517;outline-offset:3px}"
+    },
+    {
+      "name": "Button on Copper",
+      "kind": "button",
+      "refersTo": "button-on-copper",
+      "description": "Primary action inside a copper field: graphite fill, copper label.",
+      "html": "<div class=\"ds-field\"><button class=\"ds-btn-copper\">Join the waitlist</button></div>",
+      "css": ".ds-field{background:#c8703a;padding:24px}.ds-btn-copper{font-family:'Archivo Variable',Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums;min-height:48px;padding:0 20px;border:1px solid #131517;background:#131517;color:#c8703a;font-weight:600;font-size:1rem;border-radius:0;cursor:pointer;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1),color 160ms cubic-bezier(0.16,1,0.3,1)}.ds-btn-copper:hover{background:transparent;color:#131517}.ds-btn-copper:focus-visible{outline:2px solid #131517;outline-offset:3px}"
+    },
+    {
+      "name": "Ruled Input",
+      "kind": "input",
+      "refersTo": "input-ruled",
+      "description": "Boxless field: a single bottom rule that thickens on focus.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-email\">Email</label><input id=\"ds-email\" class=\"ds-input\" type=\"email\" placeholder=\"you@example.com\"></div>",
+      "css": ".ds-field{background:#c8703a;padding:24px}.ds-label{font-family:'Archivo Variable',Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums;display:block;margin-bottom:6px;font-weight:600;font-size:0.8125rem;letter-spacing:0.04em;text-transform:uppercase;font-stretch:85%;color:#131517}.ds-input{font-family:'Archivo Variable',Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums;width:100%;min-height:48px;padding:10px 0;border:0;border-bottom:1px solid #131517;background:transparent;border-radius:0;font-size:1.0625rem;color:#131517}.ds-input::placeholder{color:#1f0f07;opacity:1}.ds-input:focus{outline:none;box-shadow:0 2px 0 0 #131517}"
+    },
+    {
+      "name": "Currency Switch",
+      "kind": "chip",
+      "refersTo": "segmented-option-selected",
+      "description": "Segmented control on the board; selected option fills graphite.",
+      "html": "<div class=\"ds-field\"><div class=\"ds-seg\" role=\"group\" aria-label=\"Send currency\"><button aria-pressed=\"true\">GBP</button><button aria-pressed=\"false\">USD</button></div></div>",
+      "css": ".ds-field{background:#c8703a;padding:24px}.ds-seg{display:inline-flex;border:1px solid #131517}.ds-seg button{font-family:'Archivo Variable',Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums;min-height:44px;min-width:64px;padding:0 14px;border:0;background:transparent;color:#131517;font-weight:600;font-size:1rem;cursor:pointer;transition:background-color 140ms cubic-bezier(0.16,1,0.3,1),color 140ms cubic-bezier(0.16,1,0.3,1)}.ds-seg button+button{border-left:1px solid #131517}.ds-seg button[aria-pressed=\"true\"]{background:#131517;color:#c8703a}.ds-seg button:hover:not([aria-pressed=\"true\"]){background:rgba(19,21,23,0.1)}.ds-seg button:focus-visible{outline:2px solid #131517;outline-offset:3px}"
+    },
+    {
+      "name": "Departure Board",
+      "kind": "custom",
+      "refersTo": "departure-board",
+      "description": "The working quote: copper field, ruled timetable, plain-text statuses; arrival status set apart by weight.",
+      "html": "<section class=\"ds-board\"><table class=\"ds-tt\"><thead><tr><th>Time</th><th>Stop</th><th>Status</th><th>Amount</th></tr></thead><tbody><tr><td class=\"ds-time\">18:41<span class=\"ds-tz\">London</span></td><td><b>Departs</b></td><td><span class=\"ds-badge\">Scheduled</span></td><td class=\"ds-amt\">£250,000.00</td></tr><tr class=\"ds-lands\"><td class=\"ds-time\">21:15<span class=\"ds-tz\">Lusaka</span></td><td><b>Lands</b></td><td><span class=\"ds-badge\">Target*</span></td><td class=\"ds-amt\">K6,750,000.00</td></tr></tbody></table></section>",
+      "css": ".ds-board{font-family:'Archivo Variable',Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums;background:#c8703a;color:#131517}.ds-tt{width:100%;border-collapse:collapse}.ds-tt th{text-align:left;padding:10px 12px;border-bottom:1px solid #131517;font-size:0.8125rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;font-stretch:85%}.ds-tt td{padding:14px 12px;border-bottom:1px solid rgba(19,21,23,0.35);vertical-align:baseline}.ds-tt tr:last-child td{border-bottom:0}.ds-tt th:last-child,.ds-tt td:last-child{text-align:right}.ds-time{font-stretch:72%;font-weight:640;font-size:1.75rem;line-height:1;white-space:nowrap}.ds-lands td{background:rgba(19,21,23,0.05)}.ds-lands .ds-time{font-size:2.4rem}.ds-tz{display:block;margin-top:4px;font-size:0.6875rem;font-weight:600;font-stretch:85%;letter-spacing:0.04em;text-transform:uppercase;color:#1f0f07}.ds-badge{font-size:.8125rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase}.ds-lands .ds-badge{font-weight:800}.ds-amt{font-weight:600;white-space:nowrap}.ds-tt tbody tr:hover td{background:rgba(19,21,23,0.08)}"
+    },
+    {
+      "name": "Status Ledger",
+      "kind": "card",
+      "refersTo": "status-badge",
+      "description": "Ruled comparison table on paper with coloured status cells (replaces cards).",
+      "html": "<div class=\"ds-ledger\"><div class=\"ds-ledger-title\"><strong>Pulse</strong><span class=\"ds-status\">Target timetable*</span></div><table><tr><td>Start</td><td>Funds received by our licensed partner</td><td><span class=\"ds-status ds-ok\">Target</span></td></tr><tr><td>Arrival</td><td>Can take several working days</td><td><span class=\"ds-status ds-late\">Varies</span></td></tr></table></div>",
+      "css": ".ds-ledger{font-family:'Archivo Variable',Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums;background:#f3f4f2;color:#131517;border-top:2px solid #c8703a}.ds-ledger-title{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid #131517}.ds-ledger-title strong{font-stretch:78%;font-weight:640;font-size:1.75rem;line-height:1;color:#8e4318}.ds-ledger table{width:100%;border-collapse:collapse}.ds-ledger td{padding:12px 0;border-bottom:1px solid #c9cbc8;vertical-align:baseline}.ds-ledger td:first-child{width:7.5em;font-weight:600;padding-right:12px}.ds-ledger td:last-child{text-align:right;padding-left:12px}.ds-status{font-size:0.8125rem;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;font-stretch:85%;color:#4a4f55}.ds-ok{color:#1f6b5c}.ds-late{color:#8e4318}.ds-ledger tr:hover td{background:#e8e9e6}"
+    },
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "refersTo": "button-primary",
+      "description": "Wordmark plate, text links and a small primary action over a graphite rule.",
+      "html": "<header class=\"ds-mast\"><a class=\"ds-wm\" href=\"#\"><span class=\"ds-plate\"></span><span class=\"ds-wm-name\">Pulse</span></a><nav class=\"ds-nav\"><a href=\"#\">How it works</a><a href=\"#\">Preview</a><a class=\"ds-nav-btn\" href=\"#\">Join the waitlist</a></nav></header>",
+      "css": ".ds-mast{font-family:'Archivo Variable',Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:0 16px;border-bottom:1px solid #131517;background:#f3f4f2;color:#131517}.ds-wm{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit}.ds-plate{width:14px;height:14px;background:#c8703a}.ds-wm-name{font-stretch:70%;font-weight:720;font-size:1.6rem;letter-spacing:-0.01em;line-height:1}.ds-nav{display:flex;align-items:center;gap:4px}.ds-nav a{color:inherit;text-decoration:none;padding:10px 12px;font-weight:500;text-underline-offset:0.2em}.ds-nav a:hover{text-decoration:underline}.ds-nav a:focus-visible{outline:2px solid #131517;outline-offset:3px}.ds-nav .ds-nav-btn{min-height:40px;padding:0 14px;display:inline-flex;align-items:center;background:#131517;color:#f3f4f2;font-weight:600;border:1px solid #131517;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1),color 160ms cubic-bezier(0.16,1,0.3,1)}.ds-nav .ds-nav-btn:hover{background:transparent;color:#131517;text-decoration:none}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Timetable",
+    "overview": "Pulse is set like a Swiss/International railway timetable. Money keeps a schedule: every transfer is a departure with stops, clock times and an arrival, so the interface is built from what a timetable is built from: column headers, ruled rows, clock numerals, status cells and one strong field colour. Nothing floats, nothing is rounded, nothing glows. Confidence comes from alignment, tabular figures and exact times, not from decoration.\n\nThe ground is paper-white (graphite at night). One committed field colour, Zambian copper, owns whole regions: the working quote board, the waitlist band, the preview strip. Copper is never sprinkled as an accent on paper; where copper text is needed on paper it drops to its deep ink form. Type is a single grotesk, Archivo, with its width axis doing the work of a second family: condensed for clock times and headlines, normal width for reading.\n\nDensity is that of a printed schedule: generous section air (96px on desktop) around tightly ruled tables. The system supersedes the provisional v0 tokens in `.claude/skills/pulse-design-system/SKILL.md` (emerald primary, Inter, 8/16/999 radii, card components); that skill's principles (money is the hero, tabular money, radical transparency, live tracking, honest states, dark mode, reduced motion, 360px-first) still hold and are expressed here.",
+    "keyCharacteristics": [
+      "Timetable rows, column headers and status cells instead of cards.",
+      "One field colour (copper) owning whole regions; graphite and paper everywhere else.",
+      "Archivo Variable with the `wdth` axis: condensed for times and display, normal for reading.",
+      "Tabular figures on every number on every surface.",
+      "Square corners and hairline rules; depth comes from rule weight, never shadow.",
+      "A strict 12-column grid on desktop that stacks to one column with the working board above the fold on mobile."
+    ],
+    "rules": [
+      {
+        "name": "The Field Colour Rule",
+        "body": "Copper owns regions, not details. If copper appears, it fills a whole band, board or strip, or it is the 14px wordmark plate. Copper as text on paper uses Copper Ink, never raw copper.",
+        "section": "colors"
+      },
+      {
+        "name": "The Graphite-on-Copper Rule",
+        "body": "Everything inside a copper field is graphite or Kiln Brown: text, rules, selected segments, buttons (graphite fill, copper label). No white, no paper text on copper.",
+        "section": "colors"
+      },
+      {
+        "name": "The Status Green Rule",
+        "body": "Verdigris means \"on time\". It appears only in status cells and done-dots.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Everywhere Rule",
+        "body": "`font-variant-numeric: tabular-nums` is set on `body` and never turned off. Every time and amount aligns in its column.",
+        "section": "typography"
+      },
+      {
+        "name": "The Width-Is-The-Hierarchy Rule",
+        "body": "Reach for the width axis before adding a second typeface. Condensed for numerals and heads, normal for reading. No second family.",
+        "section": "typography"
+      },
+      {
+        "name": "The Column Header Rule",
+        "body": "Uppercase is reserved for labels that head or classify a column or a field: table headers, status cells, form labels, timezone tags. Never as a kicker above a headline.",
+        "section": "typography"
+      },
+      {
+        "name": "The Board-Above-The-Fold Rule",
+        "body": "On mobile the working quote board, including its action, must be visible in the first viewport. Tighten the board before cutting it.",
+        "section": "layout"
+      },
+      {
+        "name": "The Rule-Weight Rule",
+        "body": "Hierarchy of separation is 2px opener, 1px section rule, hairline row rule. Never a shadow, never a raised panel.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** build new screens from timetable parts: column headers, ruled rows, clock times, status cells.",
+      "**Do** let copper fill a whole region (board, band, strip) and keep everything inside it graphite or Kiln Brown.",
+      "**Do** set every number in tabular figures and every time in condensed Archivo with its timezone named.",
+      "**Do** make the arrival time the largest numeral on any board that shows one.",
+      "**Do** separate with rules (2px opener, 1px section, hairline row) and keep every corner square.",
+      "**Do** keep motion to state changes (160ms hovers, a 180ms staggered roll on changed values) and remove it under reduced motion.",
+      "**Do** keep the copper field the same value in dark mode, and switch Copper Ink and Verdigris to their night values."
+    ],
+    "donts": [
+      "**Don't** use cards, rounded containers, drop shadows or pill shapes.",
+      "**Don't** use raw copper as text or as a small accent on paper; use Copper Ink.",
+      "**Don't** put white or paper text on copper.",
+      "**Don't** add a second typeface; use Archivo's width axis instead.",
+      "**Don't** use gradient heroes, phone mockups or rows of three feature cards.",
+      "**Don't** put uppercase kicker labels above headlines; uppercase belongs to column headers, status cells and field labels.",
+      "**Don't** use verdigris for anything but on-time status."
+    ]
+  }
+}
