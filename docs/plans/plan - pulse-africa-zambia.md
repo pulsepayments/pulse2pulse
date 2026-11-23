@@ -123,3 +123,11 @@ Required changes:
 
 ## Needle report
 Metric: p95 funds-received → payout-completed ≤ 60 min at an all-in cost below the best measured alternative, at the investor's ticket size, per amount band. Mechanism: a neobank-grade front-end on a single licensed remitter of record that uses stablecoins as internal treasury. Verdict: **PREPARES**. Nothing here moves the metric until real transfers run; Stage 0 is designed to find out cheaply whether the gap exists and whether a compliant structure exists. Honest number: none yet. The only data point is one anecdote (n=1), and incumbents advertise minutes for small sends. Falsified by: 0b showing incumbents already serve the investor's ticket fast and cheaper; or 0c finding no structure without a Pulse-held balance. The first measurement is the investor interview (0a) plus one benchmark send (0b), both within ~2 weeks.
+
+## Update (23 Nov): Stage 0a partial answers from the founder
+See `docs/research/investor-interview.md`.
+- **Wedge confirmed: high-value first-party transfers.** Tickets are 5–6 figures, up to low 7 figures; investors move money between their own UK/US and Zambian accounts.
+- Assumption "wedge = high-value senders" holds. Mobile money is dropped from the Send MVP (bank payout only), and the **USD-to-Zambian-domiciliary-account** payout option is added as a hypothesis for 0c/0d.
+- The partner shortlist must add **OTC / large-ticket liquidity** and written limits of £100k–£3M per transfer. The provisional Yellow Card route (~ZMW 1M per transaction cap) is insufficient on its own.
+- Virtual accounts are for everyone (Phase B, after Send).
+- **No budget yet.** The immediate goal is Stage 1.1: an investor and customer-facing site with the prototype and a waitlist, built at ~£0 cost.

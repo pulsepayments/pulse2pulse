@@ -26,3 +26,13 @@ screenshots/
 
 # impeccable engine binary (downloaded on first run, checksum-verified)
 .claude/skills/impeccable/scripts/bin/
+
+# impeccable runtime working files (review captures, questions, mocks)
+.impeccable/review/
+.impeccable/questions/
+.impeccable/mocks/
+next-env.d.ts
+*.tsbuildinfo
+
+# Next.js static export output
+out/
