@@ -431,3 +431,7 @@ h1, h2, h3 { text-wrap: balance; }
   .tt td { padding-block: 8px; }
   .hero__copy { gap: 10px; }
 }
+/* Verdict-pass fixes: statuses as plain timetable text, not pills */
+.tt__badge { border: 0; padding: 0; background: none; font-size: var(--step--1); font-weight: 600; letter-spacing: 0.03em; }
+.tt--lands .tt__badge { background: none; color: var(--on-copper); font-weight: 800; }
+.watermark { border: 0; padding: 0; color: var(--copper-ink); font-size: var(--step--1); font-weight: 600; letter-spacing: 0.03em; }
