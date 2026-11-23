@@ -127,11 +127,11 @@ export function QuoteBoard({
             <td className="tt__time"><Roll value={time(1)} live={live} /><span className="tt__tz">{zone(1)}</span></td>
             <td>
               <span className="tt__stop">Converted</span>
-              <span className="tt__place">By a licensed partner, at the quoted rate</span>
+              <span className="tt__place">By our licensed partner, at the rate shown</span>
             </td>
             <td className="tt__amount">
               <Roll
-                value={quote && state.origin !== state.dest ? `1 ${state.origin} = ${quote.rate} ${state.dest}` : "Same currency"}
+                value={quote && state.origin !== state.dest ? `1 ${state.origin} = ${quote.rate} ${state.dest} (illustrative)` : "Same currency"}
                 live={live}
               />
             </td>

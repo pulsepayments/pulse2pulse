@@ -13,12 +13,12 @@ const STEPS = ["Amount", "To", "Review", "Track"] as const;
 const ACCOUNTS = [
   { id: "zmw", name: "Kwacha current account", meta: "In your name · Lusaka · ending 4821", currency: "ZMW" },
   { id: "usd", name: "US dollar account", meta: "In your name · Lusaka · ending 0193", currency: "USD" },
-  { id: "co", name: "Mwila Holdings Ltd · operating account", meta: "Your company · Lusaka · ending 7740", currency: "ZMW" },
+  { id: "co", name: "Example Holdings Ltd · operating account", meta: "Your company · Lusaka · ending 7740", currency: "ZMW" },
 ] as const;
 
 const TRACK = [
   { what: "Funds received", where: "From your account", at: 0 },
-  { what: "Converted", where: "By a licensed partner, at your locked rate", at: 4 },
+  { what: "Converted", where: "By our licensed partner, at the rate shown", at: 4 },
   { what: "Sent to Zambia", where: "On its way to your bank", at: 6 },
   { what: "Landed", where: "Credited to your account", at: 22 },
 ] as const;
@@ -133,7 +133,8 @@ export function SendPreview() {
 
         {step === 2 && quote && send && (
           <>
-            <h1 ref={heading} tabIndex={-1}>Review and send</h1>
+            <h1 ref={heading} tabIndex={-1}>Review</h1>
+            <p className="watermark" aria-hidden="true">Preview — no money moves</p>
             <dl className="summary">
               <div className="summary__row"><dt>You send</dt><dd>{formatMoney(send)}</dd></div>
               <div className="summary__row"><dt>From</dt><dd>Your {q.origin === "GBP" ? "UK" : "US"} account · {origin.city}</dd></div>
@@ -143,13 +144,13 @@ export function SendPreview() {
                 <dd>{account.currency === q.origin ? "No conversion" : `1 ${q.origin} = ${quote.rate} ${account.currency}`}</dd>
               </div>
               <div className="summary__row"><dt>Pulse fee</dt><dd>Set at launch · shown here</dd></div>
-              <div className="summary__row"><dt>Target arrival</dt><dd>{clock(quote.stops[2].at, quote.stops[2].tz)} Lusaka time*</dd></div>
-              <div className="summary__row summary__row--total"><dt>Lands</dt><dd>{formatMoney(quote.receive)}</dd></div>
+              <div className="summary__row"><dt>Target arrival</dt><dd>{clock(quote.stops[2].at, quote.stops[2].tz)} Lusaka time*<span className="summary__sub">Banking hours and checks permitting</span></dd></div>
+              <div className="summary__row summary__row--total"><dt>Lands<span className="summary__sub">Illustrative, before fees and the partner’s FX margin</span></dt><dd>{formatMoney(quote.receive)}</dd></div>
             </dl>
             <p className="callout">
-              For transfers of this size, our licensed partner may ask where the money came from before it moves. You’ll only be
-              asked once for each source. Rate held for <b>{Math.floor(lockLeft / 60)}:{String(lockLeft % 60).padStart(2, "0")}</b>
-              {lockLeft === 0 ? " — refreshed automatically in Pulse." : "."}
+              For transfers of this size, the licensed partner may ask where the money came from before it moves. You’ll only be
+              asked once for each source. Quote held for <b>{Math.floor(lockLeft / 60)}:{String(lockLeft % 60).padStart(2, "0")}</b>
+              {lockLeft === 0 ? " — Pulse will refresh it automatically." : "."}
             </p>
             <div className="panel__actions">
               <button className="btn btn--ghost" type="button" onClick={() => go(1)}>Back</button>
@@ -158,7 +159,7 @@ export function SendPreview() {
                 type="button"
                 onClick={() => { setStartedAt(new Date()); go(3); }}
               >
-                Send {formatMoney(send)} <ArrowRight />
+                Run preview <ArrowRight />
               </button>
             </div>
           </>
@@ -167,8 +168,9 @@ export function SendPreview() {
         {step === 3 && quote && send && (
           <>
             <h1 ref={heading} tabIndex={-1}>
-              {progress >= TRACK.length ? "Landed in Lusaka." : "On its way."}
+              {progress >= TRACK.length ? "Preview: landed in Lusaka." : "Preview: on its way."}
             </h1>
+            <p className="watermark" aria-hidden="true">Preview — no money moved</p>
             <div className="track" aria-live="polite">
               {TRACK.map((t, i) => {
                 const state = i < progress - 1 || progress >= TRACK.length ? "done" : i === progress - 1 ? "live" : "pending";
@@ -189,14 +191,14 @@ export function SendPreview() {
                 );
               })}
             </div>
-            <p className="note">Preview speed: stops arrive every few seconds here. Live transfers follow the target timetable.*</p>
+            <p className="note">Preview speed: stops arrive every few seconds here. At launch, transfers will aim for the target timetable.*</p>
             <div className="panel__actions">
               <button
                 className="btn btn--ghost"
                 type="button"
-                onClick={() => { setCopied(true); setTimeout(() => setCopied(false), 2000); }}
+                onClick={async () => { try { await navigator.clipboard.writeText(`${location.origin}/preview`); setCopied(true); setTimeout(() => setCopied(false), 2000); } catch { /* clipboard unavailable */ } }}
               >
-                {copied ? <>Link copied <Check /></> : "Share this timetable"}
+                {copied ? <>Link copied <Check /></> : "Copy preview link"}
               </button>
               <button className="btn btn--ghost" type="button" onClick={() => { setStartedAt(null); go(0); }}>Start again</button>
               <Link className="btn" href="/#waitlist">Join the waitlist <ArrowRight /></Link>

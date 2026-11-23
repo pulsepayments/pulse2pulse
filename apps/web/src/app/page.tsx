@@ -6,24 +6,24 @@ import { WaitlistForm } from "@/components/WaitlistForm";
 import { ArrowRight } from "@/components/Icons";
 
 const WIRE = [
-  ["Day 1", "Leaves your bank", "Departed", "muted"],
-  ["Day 1–3", "Correspondent bank", "No tracking", "late"],
-  ["Day 2–6", "Intermediary bank", "Fees deducted", "late"],
-  ["Day 3–15", "Arrives in Zambia", "Amount unknown", "late"],
+  ["Start", "Leaves your bank", "Sent", "muted"],
+  ["Then", "Through one or more intermediary banks", "Varies", "late"],
+  ["Then", "Intermediary fees may be deducted", "Varies", "late"],
+  ["Arrival", "Can take several working days", "Varies", "late"],
 ] as const;
 
 const PULSE = [
-  ["+0 min", "Funds received", "Rate locked", "ok"],
-  ["+4 min", "Converted by a licensed partner", "On time", "ok"],
-  ["+22 min", "Lands in your Zambian account", "Amount known", "ok"],
+  ["Start", "Funds received by our licensed partner", "Target", "ok"],
+  ["Minutes", "Converted at the rate you were shown", "Target", "ok"],
+  ["Under 1 hr", "Lands in your Zambian account", "Target", "ok"],
 ] as const;
 
 const NOTES = [
-  ["Rate before you send", "The exchange rate, every fee and the amount that lands are on screen before you confirm. No deductions on the way."],
-  ["Built for size", "Designed for transfers from £10,000 into seven figures, from personal or company accounts, with checks handled up front rather than mid-route."],
-  ["Every stop, live", "Each transfer has its own timetable. Share it with whoever is waiting in Lusaka, so nobody has to ask where the money is."],
-  ["Your money, your accounts", "Move money between accounts held in your own name or your company’s, in the UK, the US and Zambia."],
-  ["Licensed partners", "Regulated partners hold the money, verify identity and make the payout. Pulse is the technology on top and never holds your funds."],
+  ["Rate before you send", "The rate, our fees and the amount we expect to land will be on screen before you confirm."],
+  ["Built for larger sums", "Designed with five-, six- and seven-figure transfers in mind, from personal or company accounts. Limits and checks will be set by our licensed partners."],
+  ["Every stop, live", "Each transfer will have its own timetable. Share it with whoever is waiting in Lusaka, so nobody has to ask where the money is."],
+  ["Your money, your accounts", "Made for moving money between accounts held in your own name or your company’s, in the UK, the US and Zambia."],
+  ["Licensed partners", "When Pulse launches, regulated partners will hold the money, verify identity and make the payout. Pulse is the technology on top and will never hold your funds."],
 ] as const;
 
 const LATER = [
@@ -42,10 +42,10 @@ export default function Home() {
         <section className="hero">
           <div className="wrap hero__grid">
             <div className="hero__copy">
-              <h1 className="display">Six figures to Lusaka, on a timetable.</h1>
+              <h1 className="display">Serious money to Lusaka, on a timetable.</h1>
               <p className="lede">
                 Move your own money from the UK or US to your accounts in Zambia. See the rate and the arrival time before
-                you send. Designed to land in minutes, not weeks.*
+                you send. Designed to land in minutes, not days.<a href="#footnote" className="fn" aria-label="See note on timing">*</a>
               </p>
               <div className="hero__links">
                 <Link href="/preview" className="btn btn--ghost">
@@ -64,7 +64,7 @@ export default function Home() {
             <div className="section__head">
               <h2 className="h2" id="route-h">Same money. A different route.</h2>
               <p>
-                A wire to Zambia passes through banks you never chose, each taking time and a fee. Pulse runs the transfer as one
+                A wire to Zambia can pass through banks you never chose, each adding time and sometimes a fee. Pulse runs the transfer as one
                 scheduled journey with licensed partners and modern settlement underneath.
               </p>
             </div>
@@ -72,10 +72,10 @@ export default function Home() {
               <div className="ledger">
                 <div className="ledger__title">
                   <strong>Bank wire</strong>
-                  <span className="status status--muted">As senders describe it</span>
+                  <span className="status status--muted">Typical international wire</span>
                 </div>
                 <table>
-                  <caption className="visually-hidden">A typical international wire to Zambia, as described by senders</caption>
+                  <caption className="visually-hidden">How a typical international wire travels</caption>
                   <tbody>
                     {WIRE.map(([t, s, st, k]) => (
                       <tr key={s}>
@@ -130,7 +130,7 @@ export default function Home() {
           <div className="wrap section__grid">
             <div className="section__head">
               <h2 className="h2" id="later-h">Later on this line</h2>
-              <p>Sending comes first. These come next, on the same account.</p>
+              <p>Sending comes first. These are planned next, in the same app.</p>
             </div>
             <ul className="section__body line" role="list" style={{ listStyle: "none", margin: 0, padding: 0 }}>
               {LATER.map(([n, d]) => (

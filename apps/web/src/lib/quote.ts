@@ -5,8 +5,8 @@ import { convert, type Currency, type Money } from "./money";
  * Real quotes will come from the licensed partner via an adapter (see provider-adapter skill).
  */
 export const ILLUSTRATIVE_RATES: Record<string, string> = {
-  "GBP>ZMW": "27.1800",
-  "USD>ZMW": "21.4000",
+  "GBP>ZMW": "27.00",
+  "USD>ZMW": "21.00",
   "GBP>USD": "1.2700",
   "USD>USD": "1.0000",
 };

@@ -31,12 +31,18 @@ export function parseDecimal(value: string, scale: number): bigint {
  * Returns null for empty or invalid input, or more decimals than the currency allows.
  */
 export function parseAmountInput(input: string, currency: Currency): Money | null {
-  const cleaned = input.replace(/[\s,£$]/g, "");
-  if (cleaned === "" || !/^\d+(\.\d*)?$/.test(cleaned)) return null;
-  const [int, frac = ""] = cleaned.split(".");
+  let t = input.trim().replace(/\s/g, "");
+  const symbol = /^[£$]/.exec(t)?.[0];
+  if (symbol) {
+    if ((symbol === "£" && currency !== "GBP") || (symbol === "$" && currency !== "USD")) return null;
+    t = t.slice(1);
+  }
+  // Digits with optional correctly placed thousands separators, then an optional fraction.
+  if (!/^(\d{1,3}(,\d{3})+|\d+)(\.\d*)?$/.test(t)) return null;
+  const [int, frac = ""] = t.replace(/,/g, "").split(".");
   const d = DECIMALS[currency];
   if (frac.length > d) return null;
-  return { minor: BigInt((int || "0") + frac.padEnd(d, "0")), currency };
+  return { minor: BigInt(int + frac.padEnd(d, "0")), currency };
 }
 
 /** Divide with an explicit rounding mode. Both operands non-negative. */

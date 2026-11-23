@@ -373,3 +373,6 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .tt__tz { display: block; margin-top: 4px; font-size: 0.6875rem; font-weight: 600; font-stretch: 85%; letter-spacing: 0.04em; text-transform: uppercase; color: var(--on-copper-2); }
 .track .tt__tz { color: var(--ink-2); }
+.fn { text-decoration: none; color: var(--copper-ink); font-weight: 600; padding-inline: 2px; }
+.summary__sub { display: block; font-size: var(--step--1); font-weight: 400; color: var(--ink-2); }
+.watermark { justify-self: start; border: 1.5px solid var(--copper-ink); color: var(--copper-ink); padding: 4px 10px; font-size: var(--step--1); font-weight: 640; letter-spacing: 0.06em; text-transform: uppercase; font-stretch: 85%; }

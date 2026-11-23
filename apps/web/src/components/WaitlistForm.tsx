@@ -8,8 +8,8 @@ type Status = "idle" | "sending" | "done" | "error";
 export const ROLES = [
   ["sender", "I move my own money into Zambia"],
   ["business", "My company moves money into Zambia"],
-  ["investor", "I'm interested in investing in Pulse"],
   ["partner", "I'm a potential partner"],
+  ["other", "Something else"],
 ] as const;
 
 export const SIZES = ["Under £10k", "£10k – £100k", "£100k – £1m", "£1m and above"] as const;
@@ -53,8 +53,8 @@ export function WaitlistForm() {
         <label>Leave this empty <input name="bot-field" tabIndex={-1} autoComplete="off" /></label>
       </p>
       <div>
-        <label className="field-label" htmlFor="wl-name">Full name</label>
-        <input className="input" id="wl-name" name="name" autoComplete="name" required placeholder="Chanda Mulenga" />
+        <label className="field-label" htmlFor="wl-name">First name</label>
+        <input className="input" id="wl-name" name="name" autoComplete="given-name" placeholder="Optional" />
       </div>
       <div>
         <label className="field-label" htmlFor="wl-email">Email</label>
@@ -87,7 +87,7 @@ export function WaitlistForm() {
       <label className="check span-2">
         <input type="checkbox" name="consent" value="yes" required />
         <span>
-          Keep me updated about Pulse’s launch. I’ve read the <Link href="/privacy">privacy notice</Link>, and I can ask to be removed at any time.
+          Email me about Pulse’s launch and early access. You can unsubscribe at any time. See our <Link href="/privacy">privacy notice</Link>.
         </span>
       </label>
       <div className="span-2" style={{ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
